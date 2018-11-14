@@ -2,18 +2,13 @@ import React,{Component} from 'react';
 import './SearchBar.css'
 
 export class SearchBar extends Component {
-    state = {
-        searchValue: '',
-    }
-    handleChange = (event) => {
-        this.setState({
-            searchValue: event.target.value
-        })
-    }
+    
     render(){
+        const { handleSearchClick, handleChange } = this.props;
         return(
             <div className="searchBar">
-                <input type="text" className = "searchInput" onChange={this.handleChange}/>
+                <input type="text" className = "searchInput" onChange={handleChange}/>
+                <input type="submit" className = "searchButton" onClick={handleSearchClick}/>
             </div>
         );
     }
